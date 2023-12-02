@@ -3,7 +3,7 @@ title: "News from Bioconductor"
 date: "2023-12-01"
 draft: yes
 author:
-  - name: Bioconductor Core Developers
+  - name: "Bioconductor Core Developers"
     address: Massachusetts, New York, Seattle
     email: bioconductorcoreteam@gmail.com
 bibliography: dec.bib
@@ -18,17 +18,18 @@ output:
 
 Bioconductor version 3.18 was released on Oct 25 2023.  The system is compatible with R 4.3.  See [the release announcement](https://bioconductor.org/news/bioc_3_18_release/) for full details. Noteworthy additions since our last report to the R Journal include
 
-- (a [BSgenome package for the telomere-to-telomere build](https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.NCBI.T2T.CHM13v2.0.html)) of the 
+- a [BSgenome package for the telomere-to-telomere build](https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.NCBI.T2T.CHM13v2.0.html) of the 
 human genome (@Aganezov2022),
 - the [SparseArray](https://bioconductor.org/packages/release/bioc/html/SparseArray.html) package for overcoming the limit on the number of non-zero elements allowable in a sparse Matrix instance, 
 - [BiocBook](https://bioconductor.org/packages/BiocBook), a package to facilitate the creation of package-based, versioned online books authored in Quarto,
-- SpatialDataSets
-- AlphaMissenseR
+- a pair of Annotation packages with the the AlphaMissense (@Cheng2023) pathogenicity scores
+for coding variants in the human genome for builds [hg19](https://bioconductor.org/packages/AlphaMissense.v2023.hg19) and
+[hg38](https://bioconductor.org/packages/AlphaMissense.v2023.hg38).
 
 See the [release announcement](https://bioconductor.org/news/bioc_3_18_release/) for full details.
 The growth of the package repertory is greatly aided by a group of committed
 and energetic reviewers.  All reviews are conducted in github issues streams
-at [contributions.bioconductor.org/issues](https://contributions.bioconductor.org/issues).
+at [contributions.bioconductor.org/issues](https://github.com/Bioconductor/Contributions/issues).
 
 
 **Infrastructure**
@@ -53,15 +54,19 @@ of Martin Grigorov and Yikun Jiang.
 
 **Docker container updates**
 
-An active effort to revamp the Bioconductor Docker stack is in progress, maintaining backwards compatibility, but featuring a number of new capabilities. Notably, all containers are now published both on DockerHub (https://hub.docker.com/u/bioconductor) as well as the GitHub Container Registry (https://github.com/orgs/Bioconductor/packages?repo_name=bioconductor_docker), so any container previously pulled as `bioconductor/bioconductor_docker` for example, can now also be pulled from GHCR as `ghcr.io/bioconductor/bioconductor_docker`.
+An active effort to revamp the Bioconductor Docker stack is in progress, maintaining backwards compatibility, but featuring a number of new capabilities. Notably, all containers are now published both on 
+[DockerHub](https://hub.docker.com/u/bioconductor) as well as the 
+[GitHub Container Registry](https://github.com/orgs/Bioconductor/packages?repo_name=bioconductor_docker) (GHCR), so any container previously pulled as `bioconductor/bioconductor_docker` for example, can now also be pulled from GHCR as `ghcr.io/bioconductor/bioconductor_docker`.
+
 Additionally, the traditional `rstudio`-based containers, previously published under the `bioconductor/bioconductor_docker` name, are now also available under the `bioconductor/bioconductor` name, eliminating the need to type the `_docker` suffix. Moreover, release tags can still be used as "RELEASE_3_18" as before, but the simpler "3.18" tag now suffices. The latest `rstudio`-based container can thus now be pulled as `docker pull bioconductor/bioconductor:3.18` and will be identical to `bioconductor/bioconductor_docker:RELEASE_3_18`.
-In addition to these changes, Bioconductor now has containers built on top of different flavors of `rocker` such as `bioconductor/r-ver` container, a slimmer container with R but not RStudio, and `bioconductor/ml-verse`, notably featuring tidyverse and some GPU drivers pre-installed. These and more container flavors can be found at https://hub.docker.com/u/bioconductor and https://github.com/orgs/Bioconductor/packages?repo_name=bioconductor_docker .
+
+Bioconductor now has containers built on top of different flavors of `rocker` such as `bioconductor/r-ver` container, a slimmer container with R but not RStudio, and `bioconductor/ml-verse`, featuring tidyverse and some GPU drivers pre-installed. These and more container flavors can be found at [DockerHub](https://hub.docker.com/u/bioconductor) and [GitHub](https://github.com/orgs/Bioconductor/packages?repo_name=bioconductor_docker).
 
 **Bioc2u alpha release**
 
 @ucar2021binary discuss motivations and methods for distributing precompiled R packages via
 Linux system package managers.
-Bioconductor has recently undergone an effort to make a full package repository of Bioconductor packages and their dependencies available via `apt` on Ubuntu systems. Building on top of previous work from the Debian `r-pkg-team` (https://wiki.debian.org/Teams/r-pkg-team) and the r2u project (https://github.com/eddelbuettel/r2u/), the Bioc2u repository currently offers 3708 packages for the Bioconductor 3.18 release for Ubuntu Jammy. More information can be found at https://github.com/bioconductor/bioc2u, and alpha testers are welcome to join the #bioc2u channel on the Bioconductor Community Slack.
+Bioconductor has recently undergone an effort to make a full package repository of Bioconductor packages and their dependencies available via `apt` on Ubuntu systems. Building on top of previous work from the Debian [r-pkg-team](https://wiki.debian.org/Teams/r-pkg-team) and the [r2u project](https://github.com/eddelbuettel/r2u/), the Bioc2u repository currently offers 3708 packages for the Bioconductor 3.18 release for Ubuntu Jammy. More information can be found at https://github.com/bioconductor/bioc2u, and alpha testers are welcome to join the #bioc2u channel on the Bioconductor [Community Slack](community-bioc.slack.com).
 
 **Developer support **
 
