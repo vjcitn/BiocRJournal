@@ -1,0 +1,78 @@
+---
+title: "News from Bioconductor"
+date: "2023-12-01"
+draft: yes
+author:
+  - name: Bioconductor Core Developers
+    address: Massachusetts, New York, Seattle
+    email: bioconductorcoreteam@gmail.com
+output:
+  rjtools::rjournal_web_article:
+    self_contained: yes
+    toc: no
+---
+
+
+**Software** 
+
+Bioconductor version 3.18 was released on Oct 25 2023.  The system is compatible with R 4.3.  See [the release announcement](https://bioconductor.org/news/bioc_3_18_release/) for full details. Noteworthy additions since our last report to the R Journal include
+
+-  a package providing the first complete reference sequence for the human genome (a [BSgenome package for the telomere-to-telomere build](https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.NCBI.T2T.CHM13v2.0.html)), 
+- the [SparseArray](https://bioconductor.org/packages/release/bioc/html/SparseArray.html) package for overcoming the limit on the number of non-zero elements allowable in a sparse Matrix instance, 
+- BiocBook
+- SpatialDataSets
+- AlphaMissenseR
+
+See the [release announcement](https://bioconductor.org/news/bioc_3_18_release/) for full details.
+The growth of the package repertory is greatly aided by a group of committed
+and energetic reviewers.  All reviews are conducted in github issues streams
+at [contributions.bioconductor.org/issues](https://contributions.bioconductor.org/issues).
+
+
+**Infrastructure**
+
+National Science Foundation ACCESS Award BIR190004 provides
+significant compute resources in the [Jetstream2 academic cloud](https://jetstream-cloud.org/index.html) along with storage provided by the [Open Storage Network](https://www.openstoragenetwork.org/).
+
+These resources form the basis for the 
+Galaxy/Kubernetes-backed [Bioconductor workshop platform](https://workshop.bioconductor.org)
+originally known as [Orchestra](https://f1000research.com/articles/7-1656).
+Workshop submissions are now
+accepted through a [Shiny app](https://github.com/Bioconductor/BiocWorkshopSubmit) made available at the platform site.
+The ["BuildABiocWorkshop"](https://github.com/Bioconductor/BuildABiocWorkshop)
+template has been updated
+with GitHub Actions, and now uses the GitHub Container Registry (ghcr.io)
+
+At present, Bioconductor 3.18 packages are tested regularly on 
+Ubuntu 22.04, macOS 13.6 (arm64), macOS 12.7 (x86_64), and Windows
+Server 2022 Datacenter.  Testing of packages in the devel branch
+includes an arm64 Linux platform (openEuler 22.03) thanks to efforts
+of Martin Grigorov and Yikun Jiang.
+
+
+**Developer support **
+
+Bioconductor is developing containers similar to the Bioconductor Linux build machines. [BBS containers](https://github.com/Bioconductor/bioconductor_salt) are configured like the build machines and aim to provide a comparable experience for developers to troubleshoot issues observed on the linux build machines. The 3.18 BBS container is available for testing with
+
+```
+docker pull ghcr.io/bioconductor/bioconductor_salt:jammy-bioc-3.18-r-4.3.2
+```
+
+Future work on the BBS containers will focus on testing the container's performance 
+in comparison to the linux build machine, building the devel container, and 
+incorporating the container in a GitHub Action Workflow.
+
+**User support**
+
+Thanks to support from the Chan-Zuckerberg Initiative Essential Open Source Software
+for Science program, the web site at bioconductor.org has been extensively revised.
+
+
+**Partnering with Outreachy**
+
+Bioconductor mentored three interns in the May - August 2023 Outreachy cohort. [Outreachy](outreachy.org) partners with open source and open science organizations to create paid open source internships to individuals underrepresented in technology. The organization, which recently celebrated surpassing 1000 interns, funded the interns for three Bioconductor-mentored projects through their general fund. Interns are selected based on the contributions they make to projects as part of their final application.
+
+Atrayee Samanta, an undergraduate student at IIEST Shibpur, India, curated microbiome studies for [BugSigDB](https://bugsigdb.org/), a comprehensive database of published microbial signatures. Daena Rys, a computer science student from Cameroon, worked on issues within the [miaverse](https://microbiome.github.io/), an ecosystem based on (Tree)SummarizedExperiment for microbiome bioinformatics. Sonali Kumari, an IGDTUW student from New Dehli, India, converted Sweave vignettes in Bioconductor packages to R Markdown for [Sweave2Rmd](https://bioconductor.github.io/sweave2rmd/). You can read more about their experiences on the Bioconductor blog at [Our Journey as Outreachy Interns with Bioconductor](https://blog.bioconductor.org/posts/2023-07-14-OutreachyInternshipExperience/).
+
+Outreachy will also fund three internships with Bioconductor for the December 2023 - March 2024 Outreachy cohort. Chioma Onyido, Ester Afuape, and Peace Sandy of Nigeria will curate microbiome studies for BugSigDB.
+
