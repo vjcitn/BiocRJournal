@@ -6,6 +6,7 @@ author:
   - name: Bioconductor Core Developers
     address: Massachusetts, New York, Seattle
     email: bioconductorcoreteam@gmail.com
+bibliography: dec.bib
 output:
   rjtools::rjournal_web_article:
     self_contained: yes
@@ -17,9 +18,10 @@ output:
 
 Bioconductor version 3.18 was released on Oct 25 2023.  The system is compatible with R 4.3.  See [the release announcement](https://bioconductor.org/news/bioc_3_18_release/) for full details. Noteworthy additions since our last report to the R Journal include
 
--  a package providing the first complete reference sequence for the human genome (a [BSgenome package for the telomere-to-telomere build](https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.NCBI.T2T.CHM13v2.0.html)), 
+- (a [BSgenome package for the telomere-to-telomere build](https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.NCBI.T2T.CHM13v2.0.html)) of the 
+human genome (@Aganezov2022),
 - the [SparseArray](https://bioconductor.org/packages/release/bioc/html/SparseArray.html) package for overcoming the limit on the number of non-zero elements allowable in a sparse Matrix instance, 
-- BiocBook
+- [BiocBook](https://bioconductor.org/packages/BiocBook), a package to facilitate the creation of package-based, versioned online books authored in Quarto,
 - SpatialDataSets
 - AlphaMissenseR
 
@@ -57,6 +59,8 @@ In addition to these changes, Bioconductor now has containers built on top of di
 
 **Bioc2u alpha release**
 
+@ucar2021binary discuss motivations and methods for distributing precompiled R packages via
+Linux system package managers.
 Bioconductor has recently undergone an effort to make a full package repository of Bioconductor packages and their dependencies available via `apt` on Ubuntu systems. Building on top of previous work from the Debian `r-pkg-team` (https://wiki.debian.org/Teams/r-pkg-team) and the r2u project (https://github.com/eddelbuettel/r2u/), the Bioc2u repository currently offers 3708 packages for the Bioconductor 3.18 release for Ubuntu Jammy. More information can be found at https://github.com/bioconductor/bioc2u, and alpha testers are welcome to join the #bioc2u channel on the Bioconductor Community Slack.
 
 **Developer support **
