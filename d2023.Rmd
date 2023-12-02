@@ -49,6 +49,15 @@ Server 2022 Datacenter.  Testing of packages in the devel branch
 includes an arm64 Linux platform (openEuler 22.03) thanks to efforts
 of Martin Grigorov and Yikun Jiang.
 
+**Docker container updates**
+
+An active effort to revamp the Bioconductor Docker stack is in progress, maintaining backwards compatibility, but featuring a number of new capabilities. Notably, all containers are now published both on DockerHub (https://hub.docker.com/u/bioconductor) as well as the GitHub Container Registry (https://github.com/orgs/Bioconductor/packages?repo_name=bioconductor_docker), so any container previously pulled as `bioconductor/bioconductor_docker` for example, can now also be pulled from GHCR as `ghcr.io/bioconductor/bioconductor_docker`.
+Additionally, the traditional `rstudio`-based containers, previously published under the `bioconductor/bioconductor_docker` name, are now also available under the `bioconductor/bioconductor` name, eliminating the need to type the `_docker` suffix. Moreover, release tags can still be used as "RELEASE_3_18" as before, but the simpler "3.18" tag now suffices. The latest `rstudio`-based container can thus now be pulled as `docker pull bioconductor/bioconductor:3.18` and will be identical to `bioconductor/bioconductor_docker:RELEASE_3_18`.
+In addition to these changes, Bioconductor now has containers built on top of different flavors of `rocker` such as `bioconductor/r-ver` container, a slimmer container with R but not RStudio, and `bioconductor/ml-verse`, notably featuring tidyverse and some GPU drivers pre-installed. These and more container flavors can be found at https://hub.docker.com/u/bioconductor and https://github.com/orgs/Bioconductor/packages?repo_name=bioconductor_docker .
+
+**Bioc2u alpha release**
+
+Bioconductor has recently undergone an effort to make a full package repository of Bioconductor packages and their dependencies available via `apt` on Ubuntu systems. Building on top of previous work from the Debian `r-pkg-team` (https://wiki.debian.org/Teams/r-pkg-team) and the r2u project (https://github.com/eddelbuettel/r2u/), the Bioc2u repository currently offers 3708 packages for the Bioconductor 3.18 release for Ubuntu Jammy. More information can be found at https://github.com/bioconductor/bioc2u, and alpha testers are welcome to join the #bioc2u channel on the Bioconductor Community Slack.
 
 **Developer support **
 
